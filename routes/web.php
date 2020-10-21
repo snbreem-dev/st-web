@@ -17,6 +17,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function(){
+
+    $names = ['ahmed','ali','omar','khaled'];
+
+    //dd(count($names));
+
+    $subjects_marks = [
+        'arabic' => 90,
+        'math'=> 80,
+        'computer'=>70
+    ];
+
+    $students_marks = array(
+        array(10,20,30),
+        array(40,50,60),
+        array(70,80,90)
+    );
+
+    $name = 'ahmed';
+    $age = 25;
+    return view('test',compact('name','age','names','subjects_marks','students_marks'));
+//   return view('test',['name'=>'ahmed','age'=>25]);
+});
+
+
+/*
+
+Route::view('welcome','test2',['name'=>'ahmed','age'=>25]);
+
 Route::get('/home', function () {
     return view('welcome');
 });
@@ -78,4 +107,4 @@ Route::middleware('throttle:5,1')->group(function(){
     Route::get('admin', function () {
 
     });
-});
+});*/
