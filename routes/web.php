@@ -35,9 +35,17 @@ Route::get('/test', function(){
         array(70,80,90)
     );
 
+    $students_subject_marks = [
+        ['arabic' => 80, 'english' => 90, 'sience' => 75, 'math' => 68],
+        ['arabic' => 90, 'english' => 75, 'sience' => 75, 'math' => 68],
+        ['arabic' => 70, 'english' => 85, 'sience' => 75, 'math' => 68],
+        ['arabic' => 60, 'english' => 79, 'sience' => 75, 'math' => 68]
+    ];
+
     $name = 'ahmed';
     $age = 25;
-    return view('test',compact('name','age','names','subjects_marks','students_marks'));
+    $gpa = 70;
+    return view('test',compact('students_subject_marks','name','age','gpa','names','subjects_marks','students_marks'));
 //   return view('test',['name'=>'ahmed','age'=>25]);
 });
 
